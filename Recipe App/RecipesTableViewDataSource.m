@@ -22,7 +22,13 @@ static NSString *cellID = @"cellID";
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
     
+    //Black Diamond
+    cell = [cell initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
+    
     cell.textLabel.text = [RARecipes titleAtIndex:indexPath.row];
+    cell.detailTextLabel.text = [RARecipes descriptionAtIndex:indexPath.row];
+    cell.detailTextLabel.font = [UIFont fontWithName:@"helvetica" size:8];
+    cell.detailTextLabel.textColor = [UIColor blackColor];
     
     return cell;
 }
