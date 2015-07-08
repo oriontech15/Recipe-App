@@ -28,6 +28,8 @@
     tableView.dataSource = self.dataSource;
     [self.dataSource registerRecipeTableView:tableView];
     [self.view addSubview:tableView];
+    
+    NSLog(@"Hello");
 }
 
 - (void)didReceiveMemoryWarning {
