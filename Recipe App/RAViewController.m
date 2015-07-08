@@ -7,8 +7,12 @@
 //
 
 #import "RAViewController.h"
+#import "RecipesTableViewDataSource.h"
 
 @interface RAViewController ()
+
+@property (strong, nonatomic) RecipesTableViewDataSource *dataSource;
+//@property (strong, nonatomic) UITableView *tableView;
 
 @end
 
@@ -20,6 +24,9 @@
     
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     tableView.backgroundColor = [UIColor lightGrayColor];
+    self.dataSource = [RecipesTableViewDataSource new];
+    tableView.dataSource = self.dataSource;
+    [self.dataSource registerRecipeTableView:tableView];
     [self.view addSubview:tableView];
 }
 
