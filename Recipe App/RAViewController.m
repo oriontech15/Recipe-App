@@ -8,6 +8,8 @@
 
 #import "RAViewController.h"
 #import "RecipesTableViewDataSource.h"
+#import "RecipeDetailViewController.h"
+
 
 @interface RAViewController ()
 
@@ -26,10 +28,22 @@
     tableView.backgroundColor = [UIColor lightGrayColor];
     self.dataSource = [RecipesTableViewDataSource new];
     tableView.dataSource = self.dataSource;
+    tableView.delegate = self;
     [self.dataSource registerRecipeTableView:tableView];
     [self.view addSubview:tableView];
     
     NSLog(@"Hello");
+}
+
+#pragma mark - Delegate methods
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    RecipeDetailViewController *recipesDetailViewController = [RecipeDetailViewController new];
+    
+    [self.navigationController pushViewController:recipesDetailViewController animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

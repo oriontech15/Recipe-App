@@ -8,6 +8,7 @@
 
 #import "RAAppDelegate.h"
 #import "RAViewController.h"
+#import "RecipeDetailViewController.h"
 
 @implementation RAAppDelegate
 
@@ -18,6 +19,8 @@
     RAViewController *viewController = [[RAViewController alloc] init];
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    
+    RecipeDetailViewController *recipeDetail = [[RecipeDetailViewController alloc] init];
     
     self.window.rootViewController = navController;
     
