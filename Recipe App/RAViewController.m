@@ -9,6 +9,7 @@
 #import "RAViewController.h"
 #import "RecipesTableViewDataSource.h"
 #import "RecipeDetailViewController.h"
+#import "RARecipes.h"
 
 
 @interface RAViewController ()
@@ -42,7 +43,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     RecipeDetailViewController *recipesDetailViewController = [RecipeDetailViewController new];
-    
+    recipesDetailViewController.recipeIndex = indexPath.row;
     [self.navigationController pushViewController:recipesDetailViewController animated:YES];
 }
 

@@ -14,5 +14,7 @@
 @property (nonatomic, assign) NSInteger recipeIndex;
 
 - (UIView *) addDetailView;
+- (CGFloat)heightForDescription:(NSString *)description;
+- (CGFloat)heightForDirections:(NSString *)description;
 
 @end
